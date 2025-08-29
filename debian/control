@@ -1,0 +1,13 @@
+Source: guideos-tray-spice
+Section: misc
+Priority: optional
+Maintainer: Actionschnitzel <actionschnitzel@guideos.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 1.0
+Homepage: https://guideos.de
+
+Package: guideos-tray-spice
+Architecture: all
+Depends: ${misc:Depends}, bash
+Description: A tray application to access guideos services
+  guideos-tray-spice is a tray application that provides quick access to various guideos services.
