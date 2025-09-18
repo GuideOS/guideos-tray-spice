@@ -1,24 +1,4 @@
 #!/usr/bin/make -f
 
-PACKAGE := guideos-tray-spice
-
 %:
 	dh $@
-
-override_dh_install:
-	# Erstellen der notwendigen Verzeichnisse
-
-	mkdir -p debian/$(PACKAGE)/usr/share/doc/$(PACKAGE)
-	mkdir -p debian/$(PACKAGE)/usr/share/cinnamon/applets
-	# /usr/share/icons/hicolor/scalable
-	mkdir -p debian/$(PACKAGE)/usr/share/icons/hicolor/scalable/apps
-
-
-	# Kopieren der Dateien
-
-	cp -r guideos-tray@guideos debian/$(PACKAGE)/usr/share/cinnamon/applets/
-	cp LICENSE debian/$(PACKAGE)/usr/share/doc/$(PACKAGE)/LICENSE
-	cp guideos-tray.svg debian/$(PACKAGE)/usr/share/icons/hicolor/scalable/apps/
-
-
-	dh_install

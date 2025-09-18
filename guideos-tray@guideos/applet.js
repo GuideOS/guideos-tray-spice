@@ -2,8 +2,12 @@ const Applet = imports.ui.applet;
 const PopupMenu = imports.ui.popupMenu;
 const Util = imports.misc.util;
 const Gettext = imports.gettext;
-Gettext.bindtextdomain("guideos-tray", GLib.build_filenamev(["/usr/share/cinnamon/applets/guideos-tray-spice/locale"]));
-const _ = Gettext.gettext;
+const GLib = imports.gi.GLib;
+const UUID = "guideos-tray@guideos";
+Gettext.bindtextdomain(UUID, "/usr/share/locale");
+function _(str) {
+    return Gettext.dgettext(UUID, str);
+}
 
 function FirewallApplet(orientation, panelHeight, instanceId) {
     this._init(orientation, panelHeight, instanceId);
