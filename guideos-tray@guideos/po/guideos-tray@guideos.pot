@@ -1,0 +1,42 @@
+# GUIDEOS TRAY
+# This file is put in the public domain.
+# GuideOS Team, 2025
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: guideos-tray@guideos 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-26 12:00+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. applet.js:80
+msgid "missing dependencies"
+msgstr ""
+
+#. applet.js:222
+msgid "Open Primo"
+msgstr ""
+
+#. applet.js:227
+msgid "Report error"
+msgstr ""
+
+#. applet.js:232
+msgid "Open Updater"
+msgstr ""
+
+#. applet.js:256
+#, javascript-format
+msgid "%s updates available"
+msgstr ""
+
+#. applet.js:257
+msgid "No updates available"
+msgstr ""

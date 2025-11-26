@@ -1,3 +1,9 @@
+guideos-tray-spice (2.0) unstable; urgency=medium
+
+  * Merged with guideos-update-notify
+
+ -- Actionschnitzel <actionschnitzel@guideos.de>  Wed, 26 Nov 2025 12:25:49 +0100
+
 guideos-tray-spice (1.1) unstable; urgency=medium
 
   * Added: DE Translation

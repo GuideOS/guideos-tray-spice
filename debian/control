@@ -8,6 +8,8 @@ Homepage: https://guideos.de
 
 Package: guideos-tray-spice
 Architecture: all
-Depends: ${misc:Depends}, bash
+Depends: ${misc:Depends}, bash, guideos-updater
+Conflicts: guideos-update-notify
+Replaces: guideos-update-notify
 Description: A tray application to access guideos services
   guideos-tray-spice is a tray application that provides quick access to various guideos services.
