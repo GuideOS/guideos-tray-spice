@@ -119,6 +119,7 @@ UpdatesNotifier.prototype = {
         this.checkingInProgress = false;
         this.pendingUpdate = false;
         this.lastRefreshTime = 0;
+        this.lastNotifiedUpdateCount = 0;
 
         this.hasFirmwareUpdates = false;
 
@@ -132,8 +133,17 @@ UpdatesNotifier.prototype = {
     },
 
     _saveUpdatesToFile: function () {
-        if (!GLib.file_set_contents(this.applet_path + '/updates', this.updates.toStr())) {
-            global.logError(`${UUID}: Failed to write updates file`);
+        try {
+            // Use a writable location in the user's home directory
+            let cacheDir = GLib.get_user_cache_dir() + '/guideos-tray';
+            GLib.mkdir_with_parents(cacheDir, 0o755);
+            let updatesFile = cacheDir + '/updates';
+            
+            if (!GLib.file_set_contents(updatesFile, this.updates.toStr())) {
+                global.logError(`${UUID}: Failed to write updates file`);
+            }
+        } catch (e) {
+            global.logError(`${UUID}: Error saving updates file: ${e}`);
         }
     },
 
@@ -165,9 +175,13 @@ UpdatesNotifier.prototype = {
                     global.log(`${UUID}: D-Bus Finished signal received, current updates: ${this.updates.map.size}`);
                     this._update();
                     this._saveUpdatesToFile();
-                    // Send notification if updates are available
-                    if (this.updates.map.size > 0) {
+                    // Send notification only if update count increased (new updates available)
+                    if (this.updates.map.size > 0 && this.updates.map.size > this.lastNotifiedUpdateCount) {
+                        this.lastNotifiedUpdateCount = this.updates.map.size;
                         Util.spawn_async(['/usr/bin/bash', this.applet_path + '/updates.sh', "notify", this.updates.map.size.toString()]);
+                    } else if (this.updates.map.size === 0) {
+                        // Reset counter when no updates available
+                        this.lastNotifiedUpdateCount = 0;
                     }
                 }
             }

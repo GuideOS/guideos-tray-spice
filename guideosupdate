@@ -1,0 +1,5 @@
+# Allow any user to check for new system updates without
+# requiring user authentication.
+
+ALL ALL = NOPASSWD:/usr/bin/pkcon refresh
+ALL ALL = NOPASSWD:/usr/bin/pkcon get-updates

@@ -35,6 +35,18 @@ notify)
     # Send desktop notification with update count
     update_count=$2
     
+    # Ensure DBUS_SESSION_BUS_ADDRESS is set for notify-send
+    if [[ -z "${DBUS_SESSION_BUS_ADDRESS:-}" ]]; then
+        user=$(whoami)
+        DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u "$user" cinnamon | head -1)/environ 2>/dev/null | cut -d= -f2- | tr -d '\0')
+        export DBUS_SESSION_BUS_ADDRESS
+    fi
+    
+    # Ensure DISPLAY is set
+    if [[ -z "${DISPLAY:-}" ]]; then
+        export DISPLAY=:0
+    fi
+    
     # Check for Flatpak updates
     flatpak_count=0
     if command -v flatpak &>/dev/null; then

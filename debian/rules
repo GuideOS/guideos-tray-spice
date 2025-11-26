@@ -1,4 +1,13 @@
 #!/usr/bin/make -f
 
+PACKAGE := guideos-tray-spice
+
 %:
 	dh $@
+
+override_dh_install:
+	dh_install
+	# Install sudoers file
+	mkdir -p debian/$(PACKAGE)/etc/sudoers.d
+	cp guideosupdate debian/$(PACKAGE)/etc/sudoers.d/
+	chmod 0440 debian/$(PACKAGE)/etc/sudoers.d/guideosupdate
