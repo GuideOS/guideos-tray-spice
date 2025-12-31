@@ -1,0 +1,13 @@
+Package: guideos-tray-spice
+Version: 2.0.5
+Architecture: all
+Maintainer: Actionschnitzel <actionschnitzel@guideos.de>
+Installed-Size: 131
+Depends: bash, guideos-updater
+Conflicts: guideos-update-notify
+Replaces: guideos-update-notify
+Section: misc
+Priority: optional
+Homepage: https://guideos.de
+Description: A tray application to access guideos services
+  guideos-tray-spice is a tray application that provides quick access to various guideos services.

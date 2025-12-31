@@ -6,7 +6,15 @@ PACKAGE := guideos-tray-spice
 	dh $@
 
 override_dh_install:
-	dh_install
+	# Install applet
+	mkdir -p debian/$(PACKAGE)/usr/share/cinnamon/applets/guideos-tray@guideos
+	cp -r guideos-tray@guideos/* debian/$(PACKAGE)/usr/share/cinnamon/applets/guideos-tray@guideos/
+	# Install icon
+	mkdir -p debian/$(PACKAGE)/usr/share/icons/hicolor/scalable/apps
+	cp guideos-tray.svg debian/$(PACKAGE)/usr/share/icons/hicolor/scalable/apps/
+	# Install license
+	mkdir -p debian/$(PACKAGE)/usr/share/doc/guideos-tray-spice
+	cp LICENSE debian/$(PACKAGE)/usr/share/doc/guideos-tray-spice/
 	# Install sudoers file
 	mkdir -p debian/$(PACKAGE)/etc/sudoers.d
 	cp guideosupdate debian/$(PACKAGE)/etc/sudoers.d/

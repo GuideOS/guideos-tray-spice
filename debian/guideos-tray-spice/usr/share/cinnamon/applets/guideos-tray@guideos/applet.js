@@ -244,17 +244,10 @@ UpdatesNotifier.prototype = {
             Util.spawn(['guideos-updater']);
         });
 
-            // Neuer Menüeintrag Bildschirmfoto
-            let iScreenshot = new PopupMenu.PopupIconMenuItem("Bildschirmfoto", "camera-photo-symbolic", St.IconType.SYMBOLIC);
-            iScreenshot.connect('activate', () => {
-                Util.spawn(['guideos-screenshot-editor']);
-            });
-
         if (!this.showWindowOnClick) {
             this.menu.addMenuItem(iPrimo);
             this.menu.addMenuItem(iReportError);
             this.menu.addMenuItem(iOpenUpdater);
-                this.menu.addMenuItem(iScreenshot);
         } else {
             this._applet_context_menu.addMenuItem(iPrimo, position);
             this.rightMenuItemsIndexes.push(position++);
@@ -262,8 +255,6 @@ UpdatesNotifier.prototype = {
             this.rightMenuItemsIndexes.push(position++);
             this._applet_context_menu.addMenuItem(iOpenUpdater, position);
             this.rightMenuItemsIndexes.push(position++);
-                this._applet_context_menu.addMenuItem(iScreenshot, position);
-                this.rightMenuItemsIndexes.push(position++);
         }
     },
 

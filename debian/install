@@ -1,6 +1,0 @@
-
-guideos-tray@guideos/* usr/share/cinnamon/applets/guideos-tray@guideos/
-guideos-tray.svg usr/share/icons/hicolor/scalable/apps/
-LICENSE usr/share/doc/guideos-tray-spice/LICENSE
-guideos-tray@guideos/po/de.mo usr/share/locale/de/LC_MESSAGES/guideos-tray@guideos.mo
-guideos-tray@guideos/po/en.mo usr/share/locale/en/LC_MESSAGES/guideos-tray@guideos.mo
