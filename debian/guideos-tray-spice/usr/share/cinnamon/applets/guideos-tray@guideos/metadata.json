@@ -1,8 +1,0 @@
-{
-    "uuid": "guideos-tray@guideos",
-    "name": "GuideOS Tray",
-    "description": "Schnellzugriff auf wichtige Funktionen.",
-    "version": "2.0",
-    "max-instances": 1,
-    "icon": "guideos-tray"
-}

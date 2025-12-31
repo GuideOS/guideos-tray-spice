@@ -1,7 +1,8 @@
-guideos-tray-spice (2.0.5) unstable; urgency=medium
+guideos-tray-spice (2.0.6) unstable; urgency=medium
 
   * Changed: Applet hardcoded to German language
   * Removed: Translation system (gettext/po/mo files)
+  * Added: Screenshot Tool
 
  -- Actionschnitzel <actionschnitzel@guideos.de>  Wed, 04 Dec 2025 16:50:00 +0100
 
