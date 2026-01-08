@@ -78,6 +78,7 @@ notify)
             action=$(notify-send "GuideOS Updates" "$notify_message" \
                 --icon=/usr/share/icons/hicolor/scalable/apps/guidos-updater.svg \
                 --action=update="GuideOS-Updater öffnen" \
+                --expire-time=6000 \
                 --wait \
                 --urgency=critical 2>&1)
             

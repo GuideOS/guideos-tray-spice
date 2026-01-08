@@ -1,3 +1,10 @@
+guideos-tray-spice (2.0.7) unstable; urgency=medium
+
+  * Added: 'Screenshot' menu entry for guideos-screenshot-editor
+  * Changed: Notifications now disappear after 6 seconds
+
+ -- Actionschnitzel <actionschnitzel@guideos.de>  Wed, 08 Jan 2026 00:00:00 +0100
+
 guideos-tray-spice (2.0.6) unstable; urgency=medium
 
   * Changed: Applet hardcoded to German language
